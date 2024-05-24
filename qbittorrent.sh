@@ -13,6 +13,7 @@ What=${DOWNLOADS_NFS_SERVER}:/media/downloads
 Where=/media/downloads
 Type=nfs
 Options=_netdev,auto
+TimeoutSec=5m
 
 [Install]
 WantedBy=multi-user.target
@@ -31,6 +32,7 @@ cat << QBITTORRENT > /etc/systemd/system/qbittorrent-nox.service
 Requires=network-online.target
 Requires=media-downloads.mount
 Requires=wg-quick@wgclient_11.service
+After=media-downloads.mount
 
 [Service]
 User=nyx
