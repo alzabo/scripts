@@ -12,6 +12,14 @@ EOF
 
 sysctl --system
 
+# Add backports repo
+grep bookworm-backports /etc/apt/sources/list
+if [[ "$?" != "0" ]]; then
+  sed -i '$a\
+deb http://deb.debian.org/debian bookworm-backports main
+' /etc/apt/sources.list
+fi
+
 apt-get update
 
 apt-get install -y \
