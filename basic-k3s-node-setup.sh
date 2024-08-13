@@ -15,11 +15,11 @@ sysctl --system
 apt-get update
 
 apt-get install -y \
-  apt-transport-https \ 
-  ca-certificates \ 
-  curl \ 
-  gnupg \ 
-  nfs-common \ 
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg \
+  nfs-common \
   open-iscsi
 
 systemctl enable open-iscsi
