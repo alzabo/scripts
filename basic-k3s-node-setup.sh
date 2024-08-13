@@ -12,19 +12,7 @@ EOF
 
 sysctl --system
 
-# Add backports repo
-grep bookworm-backports /etc/apt/sources/list
-if [[ "$?" != "0" ]]; then
-  sed -i '$a\
-deb http://deb.debian.org/debian bookworm-backports main
-' /etc/apt/sources.list
-fi
-
 apt-get update
-
-# Install newer kernel from backports
-apt-get install -y -t bookworm-backports \
-  linux-image-amd64
 
 apt-get install -y \
   apt-transport-https \ 
