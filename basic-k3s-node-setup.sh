@@ -22,6 +22,9 @@ fi
 
 apt-get update
 
+# (Optional) Install newer kernel from backports
+# apt-get install -y -t bookworm-backports linux-image-amd64
+
 apt-get install -y \
   apt-transport-https \
   ca-certificates \
